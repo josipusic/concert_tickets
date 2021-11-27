@@ -1,0 +1,90 @@
+[
+{
+  "model": "catalog.concert",
+  "pk": 1,
+  "fields": {
+    "name": "Dead Genre",
+    "slug": "dead-genre",
+    "starts_at": "2021-11-30T15:30:00Z",
+    "ticket_price": "99.99",
+    "tickets_sold": 4000,
+    "artist": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.concert",
+  "pk": 2,
+  "fields": {
+    "name": "Nobody's Comin",
+    "slug": "nobodys-comin",
+    "starts_at": "2021-12-09T23:00:00Z",
+    "ticket_price": "4.99",
+    "tickets_sold": 0,
+    "artist": [
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.concert",
+  "pk": 3,
+  "fields": {
+    "name": "Cover Your Ears",
+    "slug": "cover-your-ears",
+    "starts_at": "2021-12-08T18:00:00Z",
+    "ticket_price": "59.99",
+    "tickets_sold": 8000,
+    "artist": [
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "catalog.concert",
+  "pk": 4,
+  "fields": {
+    "name": "One Direction Have Gone Their Seperate Ways",
+    "slug": "one-direction-have-gone-their-separate-ways",
+    "starts_at": "2021-12-22T12:00:00Z",
+    "ticket_price": "999.99",
+    "tickets_sold": 400,
+    "artist": [
+      6
+    ]
+  }
+},
+{
+  "model": "catalog.concert",
+  "pk": 5,
+  "fields": {
+    "name": "Ran Out Of Money",
+    "slug": "ran-out-of-money",
+    "starts_at": "2022-01-19T20:00:00Z",
+    "ticket_price": "149.99",
+    "tickets_sold": 1500,
+    "artist": [
+      8,
+      7
+    ]
+  }
+},
+{
+  "model": "catalog.concert",
+  "pk": 6,
+  "fields": {
+    "name": "Incompatible",
+    "slug": "incompatible",
+    "starts_at": "2021-11-26T06:00:00Z",
+    "ticket_price": "69.99",
+    "tickets_sold": 5,
+    "artist": [
+      1,
+      9
+    ]
+  }
+}
+]

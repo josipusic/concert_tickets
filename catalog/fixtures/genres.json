@@ -1,0 +1,47 @@
+[
+{
+  "model": "catalog.genre",
+  "pk": 1,
+  "fields": {
+    "name": "Pop",
+    "slug": "pop",
+    "description": "Short to medium-length songs written in a basic format."
+  }
+},
+{
+  "model": "catalog.genre",
+  "pk": 2,
+  "fields": {
+    "name": "Hip Hop",
+    "slug": "hip-hop",
+    "description": "Cultural movement sweeping up music, poetry, dance, art, fashion, and political philosophy."
+  }
+},
+{
+  "model": "catalog.genre",
+  "pk": 3,
+  "fields": {
+    "name": "Rock 'n' roll",
+    "slug": "rock-n-roll",
+    "description": "Combines elements of rhythm and blues (R&B), jazz, and country music with the addition of electric instruments."
+  }
+},
+{
+  "model": "catalog.genre",
+  "pk": 4,
+  "fields": {
+    "name": "Folk Punk",
+    "slug": "folk-punk",
+    "description": "Combines the instrumentation of traditional folk with the primal energy of punk rock."
+  }
+},
+{
+  "model": "catalog.genre",
+  "pk": 5,
+  "fields": {
+    "name": "Rap",
+    "slug": "rap",
+    "description": "A style of popular music, developed by disc jockeys and urban Black performers in the late 1970s, in which an insistent, recurring beat pattern provides the background and counterpoint for rapid, slangy, and often boastful rhyming patter."
+  }
+}
+]

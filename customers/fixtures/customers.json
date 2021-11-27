@@ -1,0 +1,22 @@
+[
+{
+  "model": "customers.customer",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$B5IVd4oSbWQHTo4SBVNhav$fVicNkN1rS9rzctJf0Gso+8OYArWGuWFZz6mCf9D00w=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "superuser",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-11-27T18:36:50.470Z",
+    "groups": [],
+    "user_permissions": [],
+    "liked_genres": [],
+    "liked_artists": []
+  }
+}
+]

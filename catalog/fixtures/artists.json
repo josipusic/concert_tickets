@@ -1,0 +1,122 @@
+[
+{
+  "model": "catalog.artist",
+  "pk": 1,
+  "fields": {
+    "genre": 5,
+    "name": "Eminem",
+    "slug": "eminem",
+    "popularity": 9
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 2,
+  "fields": {
+    "genre": 5,
+    "name": "Snoop Dogg",
+    "slug": "snoop-dogg",
+    "popularity": 7
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 3,
+  "fields": {
+    "genre": 5,
+    "name": "21 Savage",
+    "slug": "21-savage",
+    "popularity": 1
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 4,
+  "fields": {
+    "genre": 1,
+    "name": "Lady Gaga",
+    "slug": "lady-gaga",
+    "popularity": 5
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 5,
+  "fields": {
+    "genre": 1,
+    "name": "Bruno Mars",
+    "slug": "bruno-mars",
+    "popularity": 6
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 6,
+  "fields": {
+    "genre": 1,
+    "name": "One Direction",
+    "slug": "one-direction",
+    "popularity": 2
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 7,
+  "fields": {
+    "genre": 3,
+    "name": "The Rolling Stones",
+    "slug": "the-rolling-stones",
+    "popularity": 3
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 8,
+  "fields": {
+    "genre": 3,
+    "name": "Aerosmith",
+    "slug": "aerosmith",
+    "popularity": 4
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 9,
+  "fields": {
+    "genre": 3,
+    "name": "Eric Clapton",
+    "slug": "eric-clapton",
+    "popularity": 6
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 10,
+  "fields": {
+    "genre": 4,
+    "name": "Gogol Bordello",
+    "slug": "gogol-bordello",
+    "popularity": 2
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 11,
+  "fields": {
+    "genre": 4,
+    "name": "Mica Trofrtaljka",
+    "slug": "mica-trofrtaljka",
+    "popularity": 10
+  }
+},
+{
+  "model": "catalog.artist",
+  "pk": 12,
+  "fields": {
+    "genre": 4,
+    "name": "This Bike Is a Pipe Bomb",
+    "slug": "this-bike-is-a-pipe-bomb",
+    "popularity": 3
+  }
+}
+]
