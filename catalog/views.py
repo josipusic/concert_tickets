@@ -72,26 +72,30 @@ class ConcertDetailApiView(RetrieveAPIView):
 def create_checkout_session(request, slug):
     """ View that creates a Stripe checkout session and redirects to Stripe checkout page. """
 
-    concert = Concert.objects.get(slug=slug)
-    query_string = '?session_id={CHECKOUT_SESSION_ID}'
-    success_url = f"{request.build_absolute_uri(reverse('create-ticket'))}{query_string}"
-    cancel_url = request.build_absolute_uri(reverse('concert-detail', args=[slug]))
+    concert = Concert.objects.get_or_none(slug=slug)
 
-    session = stripe.checkout.Session.create(
-        line_items=[{
-            'price_data': {
-                'currency': 'hrk',
-                'product_data': {
-                    'name': f'{concert.name} Concert Ticket',
+    if concert:
+        query_string = '?session_id={CHECKOUT_SESSION_ID}'
+        success_url = f"{request.build_absolute_uri(reverse('create-ticket'))}{query_string}"
+        cancel_url = request.build_absolute_uri(reverse('concert-detail', args=[slug]))
+
+        session = stripe.checkout.Session.create(
+            line_items=[{
+                'price_data': {
+                    'currency': 'hrk',
+                    'product_data': {
+                        'name': f'{concert.name} Concert Ticket',
+                    },
+                    'unit_amount': int(concert.ticket_price * 100),
                 },
-                'unit_amount': int(concert.ticket_price * 100),
-            },
-            'quantity': 1,
-        }],
-        mode='payment',
-        success_url=success_url,
-        cancel_url=cancel_url,
-        metadata={'concert_slug': slug}
-    )
+                'quantity': 1,
+            }],
+            mode='payment',
+            success_url=success_url,
+            cancel_url=cancel_url,
+            metadata={'concert_slug': slug}
+        )
 
-    return Response({'checkout_url': session.url})
+        return Response({'checkout_url': session.url})
+
+    return Response({f'Concert with slug {slug} does not exist.'})

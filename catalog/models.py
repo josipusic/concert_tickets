@@ -2,6 +2,19 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
+class GetOrNoneManager(models.Manager):
+    """
+        Adds get_or_none manager method.
+        example usage: Artist.objects.get_or_none(slug=...
+    """
+
+    def get_or_none(self, **kwargs):
+        try:
+            return self.get(**kwargs)
+        except self.model.DoesNotExist:
+            return None
+
+
 class Genre(models.Model):
     name = models.CharField(max_length=64)
     slug = models.SlugField(max_length=64)
@@ -22,6 +35,7 @@ class Artist(models.Model):
 
 
 class Concert(models.Model):
+    objects = GetOrNoneManager()
     artist = models.ManyToManyField(Artist)
     name = models.CharField(max_length=128)
     slug = models.SlugField(max_length=128, unique=True)

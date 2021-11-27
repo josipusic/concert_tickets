@@ -31,4 +31,4 @@ def create_ticket(request):
     concert.tickets_sold += 1
     concert.save()
 
-    return Response({f'You have successfully purchased a concert ticket for concert "{concert.name}"'})
+    return Response({f'You have successfully purchased a concert ticket for concert -{concert.name}-'})

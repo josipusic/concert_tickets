@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+import socket
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG').lower() == 'true'
 
 ALLOWED_HOSTS = []
 
@@ -90,12 +91,12 @@ WSGI_APPLICATION = 'concert_tickets.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('CONCERT_TICKET_ENGINE', 'django.db.backends.postgresql_psycopg2'),
-        'NAME': os.environ.get('CONCERT_TICKET_NAME', 'concert_tickets'),
-        'USER': os.environ.get('CONCERT_TICKET_USER', 'concert_tickets'),
-        'PASSWORD': os.environ.get('CONCERT_TICKET_PASSWORD', 'concert_tickets'),
-        'HOST': os.environ.get('CONCERT_TICKET_HOST', 'localhost'),
-        'PORT': os.environ.get('CONCERT_TICKET_PORT', 5432)
+        'ENGINE': os.environ.get('DB_ENGINE'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT')
     }
 }
 
@@ -153,12 +154,21 @@ REST_FRAMEWORK = {
     'ORDERING_PARAM': 'sort'
 }
 
-INTERNAL_IPS = ['127.0.0.1']
+# django debug toolbar
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + '1' for ip in ips] + ['127.0.0.1', '10.0.2.2']
 
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 
 SWAGGER_SETTINGS = {
-    'LOGIN_URL': '/admin/login/',
-    'LOGOUT_URL': '/admin/logout/',
+    'USE_SESSION_AUTH': False,
+    'PERSIST_AUTH': True,
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    }
 }
