@@ -23,6 +23,9 @@
 
 ##### SETUP WITHOUT DOCKER AND MAKE UTILITY
 * locally save env variables from concert_tickets/config/local/web/web.env
+  * defaults (in settings.py) for all variables exist except for strip variables
+  * if you follow next steps on setting up postgres, defaults should suffice
+    and you don't need to save them locally except for stripe variables
 * create postgres database
   * perform sql commands from concert_tickets/config/local/db/init.sql with psql or whatever
 * cd into root of this project
